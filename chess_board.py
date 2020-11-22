@@ -139,7 +139,6 @@ def bishop(k,l,m,n):
         print('Нельзя, поля разного цвета!')
 
 
-
 if __name__ == "__main__":
     square_colour(k,l,m,n)
     queen(k,l,m,n)
@@ -147,4 +146,3 @@ if __name__ == "__main__":
     rook(k,l,m,n)
     queen_moves(k, l, m, n)
     bishop(k, l, m, n)
-
