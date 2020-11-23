@@ -78,6 +78,7 @@ def rook(k,l,m,n):
         if k > m:
             while k != m:
                 k -= 1
+
             print(f'Нет, двигайтесь влево пока не достигните клетки {k, l}!')
         else:
             while k != m:
@@ -90,6 +91,11 @@ def queen_moves(k,l,m,n):
      print('\n5.Можно ли с поля (k, l) одним ходом ферзя попасть на поле (m, n)?')
 
      if (k + l) % 2 == (m + n) % 2:
+         x = (k + l + m - n) // 2
+         y = (k + l - m + n) // 2
+         if x > 8 or x < 1 or y > 8 or y < 1:
+             x = (m + n + k - l) // 2
+             y = (m + n - k + l) // 2
          if k == m or l == n or abs(k - m) == abs(l - n):
              print('Да, можно!')
          else:
@@ -101,11 +107,6 @@ def queen_moves(k,l,m,n):
                  while k != m:
                      k += 1
                  print(f'Нет, двигайтесь вправо пока не достигните клетки {k, l}!')
-         x = (k + l + m - n) // 2
-         y = (k + l - m + n) // 2
-         if x > 8 or x < 1 or y > 8 or y < 1:
-             x = (m + n + k - l) // 2
-             y = (m + n - k + l) // 2
          print(f'Либо двигайтесь по диагонали на ячейку {x, y}!')
      else:
          if k == m or l == n or abs(k - m) == abs(l - n):
@@ -139,7 +140,6 @@ def bishop(k,l,m,n):
         print('Нельзя, поля разного цвета!')
 
 
-
 if __name__ == "__main__":
     square_colour(k,l,m,n)
     queen(k,l,m,n)
@@ -147,4 +147,3 @@ if __name__ == "__main__":
     rook(k,l,m,n)
     queen_moves(k, l, m, n)
     bishop(k, l, m, n)
-
